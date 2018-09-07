@@ -40,26 +40,6 @@ flush privileges;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 一、安装node
 1、n和nvm是常用的Node.js版本管理工具
 
