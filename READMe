@@ -1,0 +1,132 @@
+
+一、准备工作
+1、安装mysql 参考（https://blog.csdn.net/catstarxcode/article/details/78940385）
+
+2、启动mysql 
+  $ mysql -u root -p
+
+3、创建数据库 (所有的sql命令一定要加分号)
+  create database nodesql;
+
+4、查看数据库列表
+  show databases;
+
+5、启用数据库
+  use nodesql;
+
+6、查看数据库表
+  show tables;
+
+7、查看表结构
+  desc table_name;
+
+8、查看表数据
+  select * from users
+
+打开mysql,执行一下这句
+alter user 'root'@'localhost' identified with mysql_native_password by '123456';
+flush privileges;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+一、安装node
+1、n和nvm是常用的Node.js版本管理工具
+
+>安装nvm
+ 在终端中执行：
+ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+ 终端会输出以下这段代码，我们需要拷贝下来
+ export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+>配置环境变量（nvm 重启终端失效的解决方法，它会在bash启动的时候被调用，然后注册nvm命令）
+ 添加 .bash_profile在终端键入
+ touch .bash_profile
+ 
+ 打开 .bash_profile在终端键入
+ open -e .bash_profile
+ 在 .basn_profile中输入刚刚拷贝的两行代码
+ 
+ 运行配置文件,在终端键入
+ source ~/.bash_profile
+ 
+ ok查看配置路径,在终端键入
+ $PATH	 
+
+
+2、nrm 是一个管理 npm 源的工具。用过 ruby 和 gem 的同学会比较熟悉，通常我们会把 gem 源切到国内的淘宝镜像，这样在安装和更新一些包的时候比较快。nrm 同理，用来切换官方 npm 源和国内的 npm 源（如: cnpm），当然也可以用来切换官方 npm 源和公司私有 npm 源。
+
+>全局安装nrm:
+  npm i arm -g
+
+>查看当前nrm内置的几个npm源地址
+  nrm ls
+
+>切换到cpm
+ nrm use cpm
+
+https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.2.tgz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
