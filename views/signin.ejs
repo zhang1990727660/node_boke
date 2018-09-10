@@ -1,5 +1,17 @@
 <!-- 登陆 -->
-<%- include('header',{type:'signin'})%>
-
-
+<%- include("header",{type:'signin'})%>
+    <div class="container">
+        <form method="post" class="form create">
+            <div>
+                <label>用户名：</label>
+                <input type="text" placeholder="用户名" name="name"/>
+            </div>
+            <div>
+                <label>密码：</label>
+                <input type="password" placeholder="密码" name="password"/>
+            </div>
+            <div class="submit">登录</div>
+        </form>
+    </div>
+    <script src="/js/signin.js"></script>
 <% include footer %>

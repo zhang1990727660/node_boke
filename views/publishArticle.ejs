@@ -1,0 +1,17 @@
+<%- include('header',{type:'publishArticle'})%>
+
+    <div class="container">
+        <form style="width:100%" method="post" class="form create">
+            <div>
+                <label>标题：</label>
+                <input placeholder="请输入标题" type="text" name="title">
+            </div>
+            <div>
+                <label>内容：</label>
+                <textarea placeholder="请输入内容" name="content" id="" cols="42" rows="10"></textarea>
+            </div>
+            <div class="submit">发表</div>
+        </form>
+    </div>
+    <script type="text/javascript" src="/js/publishArticle.js"></script>
+<% include footer %>

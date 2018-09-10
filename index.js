@@ -48,9 +48,9 @@ app.use(bodyParser({
 }))
 
 //  路由
-// app.use(require('./routers/signin.js').routes())
+app.use(require('./routers/signin.js').routes())
 app.use(require('./routers/signup.js').routes())
-// app.use(require('./routers/posts.js').routes())
+app.use(require('./routers/posts.js').routes())
 // app.use(require('./routers/signout.js').routes())
 
 

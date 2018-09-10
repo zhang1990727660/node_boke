@@ -4,7 +4,8 @@ const moment=require('moment')()
 const checkNotLogin=require('../middlewares/check.js').checkNotLogin
 const checkLogin=require('../middlewares/check.js').checkLogin
 
-exports.getSignup=async ctx=>{
+//获取登录页
+exports.getSignup= async ctx=>{
     console.log("ctx:",ctx);
     // await checkNotLogin()
     await ctx.render('signup',{
@@ -12,6 +13,7 @@ exports.getSignup=async ctx=>{
     })
 }
 
+//注册
 exports.postSignup=async ctx=>{
     let {name,password,repeatpass,avator} =ctx.request.body
     await userModel.findUserByName(name)

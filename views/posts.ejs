@@ -1,0 +1,33 @@
+<%- include("header",{type:'posts'})%>
+
+<div class="container">
+    <% if(posts && posts.length>0){ %>
+    <ul class="posts spost">
+        <% posts.forEach(function(res){ %>
+        <li>
+            <div class="author">
+                <span>author:<%= res.name%></span>
+                <span>评论数：<%=res.comments%></span>
+                <span>浏览量：<%=res.pv%></span>
+            </div>
+            <div class="comment_pv">
+                <span><%- res.moment%></span>
+            </div>
+            <a href="javascript:;">
+                <div class="title">
+                    <img class="userAvator" src=<%=res.avator ? res.avator:'images/qd.png' %> alt=""/>
+                    title
+                </div>
+                <div class="content markedown">
+                    <p><%- res.content%></p>
+                </div>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+    <% }else{ %>
+        <p class="tips">暂时没有文章，快去前往发表吧</p>
+    <% } %>
+</div>
+
+<% include footer %>

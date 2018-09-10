@@ -26,4 +26,55 @@
 </head>
 <body>
     <div class="message"></div>
-    <header>标题</header>
+    <header>
+            <% if(session.user) {%>
+            <div class="user_name">Hello,<%=session.user%></div>
+            <% }else{ %>
+            <div class="message">登录成功</div>
+            <% } %>
+            <div class="user_right">
+                    <% if(session.user){ %>
+                    <div class="has_user">
+                        <a target="__blank" href="https://github.com/wclimb/Koa2-blog">GitHub</a>
+                            <% if(type=='posts') { %>
+                                <a class="active" href="/posts">全部文章</a>
+                            <% }else{ %>
+                                <a href="/posts">全部文章</a>
+                            <% } %>
+                            
+                            <% if(type=="my"){ %>
+                                <a class="active" href="/posts?author=张三">我的文章</a>
+                            <% }else{ %>
+                                <a href="/posts?author=张三">我的文章</a>
+                            <% } %>
+
+                            <% if(type=='publishArticle') {%>
+                                <a class="active" href="/publishArticle">发表文章</a>
+                            <% }else{ %>
+                                <a href="/publishArticle">发表文章</a>
+                            <% } %>    
+                            
+                            <% if(type=='signin') {%>
+                                <span class="active signout">退出</span>
+                            <% }else {%>
+                                <span class="signout">退出</span>
+                            <% } %>
+                    </div>
+                    <% }else{ %>
+                        <div class="has_user">
+                            <a target="__blank" href="https://github.com/wclimb/Koa2-blog">GitHub</a>
+                                <% if(type=='posts') {%>
+                                    <a class="active" href="/posts">全部文章</a>
+                                <% }else{ %>
+                                    <a href="/posts">全部文章</a>
+                                <% } %>
+
+                                <% if(type=='signin') {%>
+                                    <span class="active signout">登陆</span>
+                                <% }else {%>
+                                    <span class="signout">登录</span>
+                                <% } %>
+                        </div>
+                   <% } %>    
+            </div>
+        </header>
