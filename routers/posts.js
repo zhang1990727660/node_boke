@@ -1,6 +1,10 @@
 const router=require('koa-router')()
 const controller =require('../controller/c-posts')
 
+router.get('/',ctx=>{
+    ctx.redirect("/posts");
+})  
+
 //文章列表页面
 router.get('/posts',controller.getPosts)   
 
