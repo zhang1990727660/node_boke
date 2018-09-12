@@ -19,8 +19,21 @@
                     top:'-100%'
                 })
             },1500)
-          
-
+        }
+        window.onload=function(){
+            $(".signout").click(function(){
+                $.ajax({
+                    url:'/signout',
+                    data:{},
+                    method:'get',
+                    dataType:'json',
+                    success:function(res){
+                        if(res.code==200){
+                                window.location.href="/posts"
+                        }
+                    }
+                })
+            })  
         }
     </script>
 </head>
@@ -28,9 +41,9 @@
     <div class="message"></div>
     <header>
             <% if(session.user) {%>
-            <div class="user_name">Hello,<%=session.user%></div>
+                <div class="user_name">Hello,<%=session.user%></div>
             <% }else{ %>
-            <div class="message">登录成功</div>
+                <div class="user_name">欢迎注册登录 ^_^</div>
             <% } %>
             <div class="user_right">
                     <% if(session.user){ %>
@@ -42,10 +55,10 @@
                                 <a href="/posts">全部文章</a>
                             <% } %>
                             
-                            <% if(type=="my"){ %>
-                                <a class="active" href="/posts?author=张三">我的文章</a>
+                            <% if(type=="myArticle"){ %>
+                                <a class="active" href="/myArticle">我的文章</a>
                             <% }else{ %>
-                                <a href="/posts?author=张三">我的文章</a>
+                                <a href="/myArticle">我的文章</a>
                             <% } %>
 
                             <% if(type=='publishArticle') {%>
@@ -69,10 +82,16 @@
                                     <a href="/posts">全部文章</a>
                                 <% } %>
 
+                                <% if(type=='signup') {%>
+                                    <a class="active" href="/signup">注册</a>
+                                <% }else{ %>
+                                    <a href="/signup">注册</a>
+                                <% } %>
+
                                 <% if(type=='signin') {%>
-                                    <span class="active signout">登陆</span>
+                                    <a href="/signin" class="acitve">登录</a>
                                 <% }else {%>
-                                    <span class="signout">登录</span>
+                                    <a href="/signin">登录</a>
                                 <% } %>
                         </div>
                    <% } %>    

@@ -5,12 +5,12 @@ const checkNotLogin=require('../middlewares/check.js').checkNotLogin
 const checkLogin=require('../middlewares/check.js').checkLogin
 
 //获取登录页
-exports.getSignup= async ctx=>{
+exports.getSignup = async ctx => {
     console.log("ctx:",ctx);
-    // await checkNotLogin()
+    await checkNotLogin(ctx)
     await ctx.render('signup',{
-        // session:ctx.session
-    })
+        session:ctx.session
+    }) 
 }
 
 //注册

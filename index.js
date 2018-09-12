@@ -47,11 +47,11 @@ app.use(bodyParser({
   formLimit: '1mb'
 }))
 
-//  路由
+//路由
 app.use(require('./routers/signin.js').routes())
 app.use(require('./routers/signup.js').routes())
 app.use(require('./routers/posts.js').routes())
-// app.use(require('./routers/signout.js').routes())
+app.use(require('./routers/signout.js').routes())
 
 
 app.listen(config.port)

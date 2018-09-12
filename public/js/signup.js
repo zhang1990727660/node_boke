@@ -19,6 +19,9 @@ $(".submit").click(function(){
                 console.log("res===============",res);
                 if(res.code==200){
                     fade('注册成功')
+                    setTimeout(function(){
+                        window.location.href='/signin'
+                    },1000)
                 }else{
                     fade(res.message)
                 }

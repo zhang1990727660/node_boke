@@ -79,8 +79,9 @@ header .user_name {
 }
 .posts .comment_pv{
     position: absolute;
-    bottom: 5px;
+    /* bottom: 5px; */
     right: 10px;
+    font-size:12px;
 }
 .posts .author{
     position: absolute;
@@ -90,8 +91,26 @@ header .user_name {
 }
 .posts .author span{
     margin-right: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
+.posts .operate{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size:0;
+}
+.posts .operate span{
+    font-size:12px;
+}
+.posts .operate a{
+    margin-right: 5px;
+    font-size: 14px;
+    cursor:pointer;  
+}
+.posts .operate a:hover{
+    color: #ec5051;
+}
+
 .posts > li:hover {
     background: #f2f2f2;
 }
@@ -102,6 +121,7 @@ header .user_name {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
 }
+
 .posts > li + li{
     border-top: 1px solid #ddd;
 }
@@ -123,7 +143,7 @@ header .user_name {
     top: 3px;
     width: 40px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 50%;
 }
 .posts .content{
     border-top: 1px solid #f2f2f2;
@@ -137,7 +157,7 @@ header .user_name {
 .userMsg img{
     width: 40px;
     height: 40px;
-    border-radius: 5px;
+    border-radius:50%;
     margin-right: 10px;
     vertical-align: middle;
     display: inline-block;
@@ -154,6 +174,9 @@ header .user_name {
 .spost .comment_pv{
     position: absolute;
     top: 10px;
+}
+.spost .comment_pv span{
+    color:#928e8e;
 }
 .spost .edit {
     position: absolute;
@@ -309,13 +332,11 @@ input:hover,input:active,textarea:hover,textarea:active{
 }
 
 .delete_comment,
-.delete_post {
+.delete_post{
     cursor: pointer;
 }
-
 .delete_comment:hover,
-.delete_post:hover,
-.author a:hover {
+.delete_post:hover{
     color: #ec5051;
 }
 .disabled{

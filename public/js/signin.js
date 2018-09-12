@@ -10,6 +10,9 @@ $(".submit").on("click",function(){
             success:function(res){
                 if(res.code===200){
                     fade('登录成功')
+                    setTimeout(function(){
+                        window.location.href='/posts'
+                    },1000)
                 }else{
                     fade(res.message)
                 }

@@ -4,9 +4,9 @@
     <% if(posts && posts.length>0){ %>
     <ul class="posts spost">
         <% posts.forEach(function(res){ %>
-        <li>
+        <li onclick="window.location.href='/posts/<%=res.id%>'">
             <div class="author">
-                <span>author:<%= res.name%></span>
+                <span>author：<%= res.name%></span>
                 <span>评论数：<%=res.comments%></span>
                 <span>浏览量：<%=res.pv%></span>
             </div>
@@ -15,8 +15,12 @@
             </div>
             <a href="javascript:;">
                 <div class="title">
-                    <img class="userAvator" src=<%=res.avator ? res.avator:'images/qd.png' %> alt=""/>
-                    title
+                    <% if(res.avator){ %>
+                        <img class="userAvator" src=<%=res.avator %> alt=""/>
+                    <% }else{ %>
+                        <img class="userAvator" src="/images/default.jpg" %> alt=""/>     
+                    <% } %>  
+                    <%=res.title%>
                 </div>
                 <div class="content markedown">
                     <p><%- res.content%></p>

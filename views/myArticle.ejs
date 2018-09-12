@@ -1,0 +1,59 @@
+<!--我的文章-->
+<%- include('header',{type:'myArticle'})%>
+<div class="container">
+        <% if(posts && posts.length>0){ %>
+        <ul class="posts spost">
+            <% posts.forEach(function(res){ %>
+            <li>
+                <div class="author">
+                    <span>author:<%= res.name%></span>
+                    <span>评论数：<%=res.comments%></span>
+                    <span>浏览量：<%=res.pv%></span>
+                </div>
+                <div class="operate">
+                    <a href="/edit/<%=res.id %>" data-id=<%=res.id %> class="operate-edit">编辑</a>
+                    <span> | </span>  
+                    <a href="javascript:;" data-id=<%=res.id %> class="operate-delete">删除</a>
+                </div>
+                <div class="comment_pv">
+                    <span><%- res.moment%></span>
+                </div>   
+                <a href="javascript:;">
+                    <div class="title">
+                        <img class="userAvator" src=<%=res.avator ? res.avator :'/images/default.jpg' %> alt=""/> 
+                        <%=res.title%>
+                    </div>
+                    <div class="content markedown">
+                        <p><%- res.content%></p>
+                    </div>
+                </a>
+            </li>
+            <% }) %>
+        </ul>
+        <% }else{ %>
+            <p class="tips">暂时没有文章，快去前往发表吧</p>
+        <% } %>
+    </div>
+
+    <script type="text/javascript">
+    //删除
+    $(".operate-delete").click(function(){
+        let id=$(this).attr('data-id')
+        $.ajax({
+            url:'/deletePosts/'+id,
+            type:'get',
+            dataType:'json',
+            success:function(res){
+                if(res.code==200){
+                    fade('删除成功')
+                    setTimeout(function(){
+                        window.location.reload()
+                    },1000)
+                }else{
+                    fade(res.message)
+                }
+            }
+        })
+    })
+    </script>
+<% include footer %>

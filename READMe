@@ -23,6 +23,10 @@
 8、查看表数据
   select * from users
 
+9、删除表
+  DROP TABLE tbl_name;  
+  
+
 打开mysql,执行一下这句
 alter user 'root'@'localhost' identified with mysql_native_password by '123456';
 flush privileges;
